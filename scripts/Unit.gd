@@ -1,9 +1,19 @@
 extends KinematicBody
+
+export var team = 0
+var team_colors = {
+	0: preload("res://assets/materials/TeamRedMaterial.tres"),
+	1: preload("res://assets/materials/TeamBlueMaterial.tres")
+}
  
 var path = []
 var path_ind = 0
 const move_speed = 12
 onready var nav = get_parent()
+
+func _ready():
+	if team in team_colors:
+		$MeshInstance.material_override = team_colors[team]
 
 func _process(delta):
 	if path_ind < path.size():
@@ -18,3 +28,9 @@ func move_to(target_pos):
 	print(target_pos)
 	path = nav.get_simple_path(global_transform.origin, target_pos)
 	path_ind = 0
+
+func select():
+	$SelectionRing.show()
+	
+func deselect():
+	$SelectionRing.hide()
