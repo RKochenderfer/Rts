@@ -1,0 +1,26 @@
+[gd_scene format=2]
+
+[node name="GUI" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiniMapContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="MiniMap" type="MarginContainer" parent="MiniMapContainer"]
+margin_bottom = 600.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MiniMapContainer/MiniMap"]
+margin_bottom = 600.0
+
+[node name="UnitDisplayContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="AbilitiesMenuContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
